@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Finora </string>
+    <string name="dashboard">Dashboard</string>
+    <string name="transactions">Transactions</string>
+    <string name="statistics">Statistics</string>
+    <string name="settings">Settings</string>
+
+    <!-- Dashboard Fragment -->
+    <string name="expenses">Expenses</string>
+    <string name="balance">Balance</string>
+    <string name="monthly_budget">Monthly Budget</string>
+    <string name="no_transactions_yet">No Transactions Yet</string>
+    <string name="add_transaction_prompt">Add your first transaction to start tracking your finances</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="currency_amount">%1$s%2$.2f</string>
+    <string name="percentage_format">%1$d%%</string>
+
+    <!-- Transactions Fragment -->
+    <string name="no_transactions_found">No Transactions Found</string>
+    <string name="transactions_empty_message">Add a transaction to see it here</string>
+    <string name="delete_transaction">Delete Transaction</string>
+    <string name="confirm_delete">Are you sure you want to delete this transaction?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="transaction_deleted">Transaction deleted</string>
+
+    <!-- Statistics Fragment -->
+    <string name="total_expenses">Total Expenses:</string>
+    <string name="expenses_by_category">Expenses by Category</string>
+    <string name="categories_breakdown">Categories Breakdown</string>
+    <string name="no_expenses_data">No Expenses Data</string>
+    <string name="add_expenses_to_see_statistics">Add expenses to see detailed statistics</string>
+
+    <!-- Add/Edit Transaction Dialog -->
+    <string name="edit_transaction">Edit Transaction</string>
+    <string name="title">Title</string>
+    <string name="amount">Amount</string>
+    <string name="category">Category</string>
+    <string name="date">Date</string>
+    <string name="expense">Expense</string>
+    <string name="income">Income</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="transaction_added">Transaction added successfully</string>
+    <string name="transaction_updated">Transaction updated successfully</string>
+    <string name="required_field">This field is required</string>
+    <string name="invalid_amount">Invalid amount</string>
+    <string name="amount_greater_than_zero">Amount must be greater than zero</string>
+    <string name="category_icon">Category Icon</string>
+
+    <!-- Settings Fragment -->
+    <string name="general_settings">General Settings</string>
+    <string name="currency">Currency</string>
+    <string name="currency_updated">Currency updated</string>
+    <string name="budget_settings">Budget Settings</string>
+    <string name="edit_monthly_budget">Edit Monthly Budget</string>
+    <string name="monthly_budget_amount">Monthly Budget Amount</string>
+    <string name="enter_monthly_budget">Enter monthly budget</string>
+    <string name="budget_updated">Budget updated</string>
+    <string name="budget_cleared">Budget cleared</string>
+    <string name="enter_valid_budget">Please enter a valid budget</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="budget_warning_notifications">Budget Warning Notifications</string>
+    <string name="notifications_enabled">Notifications enabled</string>
+    <string name="notifications_disabled">Notifications disabled</string>
+    <string name="backup_restore">Backup &amp; Restore</string>
+    <string name="export_data">Export Data</string>
+    <string name="import_data">Import Data</string>
+    <string name="data_exported_successfully">Data exported successfully</string>
+    <string name="data_imported_successfully">Data imported successfully</string>
+    <string name="export_failed">Export failed</string>
+    <string name="import_failed">Import failed</string>
+    <string name="no_data_to_export">No data to export</string>
+    <string name="empty_state">Empty State</string>
+    <string name="app_version">MoneyMind v1.0</string>
+
+    <!-- Budget Notifications -->
+    <string name="budget_alert_title">Budget Alert</string>
+    <string name="budget_alert_50">You\'ve spent 50% of your monthly budget</string>
+    <string name="budget_alert_75">You\'ve spent 75% of your monthly budget</string>
+    <string name="budget_alert_90">You\'ve spent 90% of your monthly budget</string>
+    <string name="budget_alert_100">You\'ve spent 100% of your monthly budget</string>
+
+    <string name="budget_status">%1$s%2$.2f / %1$s%3$.2f</string>
+    <string name="no_budget_set">No monthly budget set</string>
+
+
+    <string name="notification_channel_name">Budget Alerts</string>
+    <string name="notification_channel_description">Notifications when your expenses approach or exceed your budget.</string>
+
+    <!-- Budget Warning Notifications -->
+    <string name="budget_exceeded_title">Budget Exceeded</string>
+    <string name="budget_exceeded_message">You’ve exceeded your monthly budget. Review your spending.</string>
+
+    <string name="budget_warning_title">Budget Warning</string>
+    <string name="budget_90_percent_message">You’ve used over 90% of your budget. Be cautious with further spending.</string>
+    <string name="budget_75_percent_message">You\'ve reached 75% of your budget.</string>
+</resources>
