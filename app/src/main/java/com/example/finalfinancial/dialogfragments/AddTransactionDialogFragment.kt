@@ -1,12 +1,16 @@
 package com.example.finalfinancial.dialogfragments
 
+import android.Manifest
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.annotation.RequiresPermission
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import com.example.finalfinancial.models.Category
 import com.example.finalfinancial.R
@@ -39,7 +43,6 @@ class AddTransactionDialogFragment : DialogFragment() {
 
         transactionRepository = TransactionRepository.getInstance(requireContext())
 
-        // Set dialog width to match parent
         dialog?.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
@@ -49,23 +52,20 @@ class AddTransactionDialogFragment : DialogFragment() {
         setupDatePicker()
         setupCategorySpinner()
         setupButtons()
+        clearErrorsOnTyping()
     }
 
     private fun setupTypeSelector() {
         binding.typeToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) {
                 isIncome = checkedId == R.id.income_btn
-                // Update category spinner based on transaction type
                 updateCategorySpinner()
             }
         }
-
-        // Set expense as default
         binding.expenseBtn.isChecked = true
     }
 
     private fun setupDatePicker() {
-        // Set initial date text
         updateDateButtonText()
 
         binding.datePickerBtn.setOnClickListener {
@@ -103,7 +103,6 @@ class AddTransactionDialogFragment : DialogFragment() {
         }
 
         val categoryNames = categories.map { it.displayName }
-
         val adapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_spinner_item,
@@ -129,30 +128,48 @@ class AddTransactionDialogFragment : DialogFragment() {
         val title = binding.titleEditText.text.toString().trim()
         val amountText = binding.amountEditText.text.toString().trim()
 
+        var isValid = true
+
         if (title.isEmpty()) {
-            binding.titleEditText.error = getString(R.string.required_field)
-            return false
+            showError(binding.titleInputLayout, getString(R.string.required_field))
+            isValid = false
         }
 
         if (amountText.isEmpty()) {
-            binding.amountEditText.error = getString(R.string.required_field)
-            return false
-        }
-
-        try {
-            val amount = amountText.toDouble()
-            if (amount <= 0) {
-                binding.amountEditText.error = getString(R.string.amount_greater_than_zero)
-                return false
+            showError(binding.amountInputLayout, getString(R.string.required_field))
+            isValid = false
+        } else {
+            try {
+                val amount = amountText.toDouble()
+                if (amount <= 0) {
+                    showError(binding.amountInputLayout, getString(R.string.amount_greater_than_zero))
+                    isValid = false
+                }
+            } catch (e: NumberFormatException) {
+                showError(binding.amountInputLayout, getString(R.string.invalid_amount))
+                isValid = false
             }
-        } catch (e: NumberFormatException) {
-            binding.amountEditText.error = getString(R.string.invalid_amount)
-            return false
         }
 
-        return true
+        return isValid
     }
 
+    private fun showError(layout: com.google.android.material.textfield.TextInputLayout, message: String) {
+        layout.error = message
+        layout.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake))
+    }
+
+    private fun clearErrorsOnTyping() {
+        binding.titleEditText.addTextChangedListener {
+            binding.titleInputLayout.error = null
+        }
+
+        binding.amountEditText.addTextChangedListener {
+            binding.amountInputLayout.error = null
+        }
+    }
+
+    @RequiresPermission(Manifest.permission.POST_NOTIFICATIONS)
     private fun saveTransaction() {
         val title = binding.titleEditText.text.toString().trim()
         val amount = binding.amountEditText.text.toString().toDouble()
@@ -169,8 +186,6 @@ class AddTransactionDialogFragment : DialogFragment() {
         )
 
         transactionRepository.addTransaction(transaction)
-
-        // Check if budget notification should be shown
         NotificationUtil.updateBudgetNotificationIfNeeded(requireContext())
 
         Toast.makeText(
