@@ -9,6 +9,8 @@
     >
 
     <TextView
+        android:textColor="@color/white"
+
         android:id="@+id/current_month_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

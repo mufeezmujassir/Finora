@@ -10,6 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_gray">#FFE0E0E0</color>
     <color name="icon_color">#001e20</color>
+    <color name="light_teal">#1E2F2F</color>
     <!-- App specific colors -->
     <color name="primary">#FF6200EE</color>
     <color name="primary_dark">#FF3700B3</color>
@@ -24,9 +25,17 @@
     <color name="amber">#FFFFC107</color>
     <color name="deep_purple">#FF673AB7</color>
     <color name="indigo">#FF3F51B5</color>
-    <color name="text_primary">#DE000000</color>
-    <color name="text_secondary">#99000000</color>
+
     <color name="text_disabled">#61000000</color>
     <color name="background">#FFFAFAFA</color>
     <color name="card_background">#FFFFFFFF</color>
+
+    <color name="dark_background">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="primary_accent">#64FFDA</color> <!-- Teal-like -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0BEC5</color> <!-- Soft Gray -->
+    <color name="gray">#2C2C2C</color>
+    <color name="outline_button">#64FFDA</color>
+
 </resources>

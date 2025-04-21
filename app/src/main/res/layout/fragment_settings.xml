@@ -11,6 +11,7 @@
         android:padding="16dp">
 
         <TextView
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/general_settings"
@@ -45,6 +46,8 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:textColor="@color/white"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -91,12 +94,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="@string/save" />
+                        android:text="@string/save"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/icon_color"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:textColor="@color/white"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -128,11 +135,15 @@
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/notification_switch"
                     android:layout_width="wrap_content"
+                    app:thumbTint="@color/icon_color"
+                    app:trackTint="@color/light_teal"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:textColor="@color/white"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -157,14 +168,20 @@
                     android:id="@+id/export_data_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/export_data" />
+                    android:text="@string/export_data"
+                    android:textColor="@color/white"
+
+                    android:backgroundTint="@color/icon_color"/>
 
                 <Button
                     android:id="@+id/import_data_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/import_data" />
+                    android:textColor="@color/white"
+
+                    android:text="@string/import_data"
+                    android:backgroundTint="@color/icon_color"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

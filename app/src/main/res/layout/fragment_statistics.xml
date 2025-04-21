@@ -8,6 +8,8 @@
     android:padding="16dp">
 
     <Spinner
+        android:textColor="@color/white"
+
         android:id="@+id/month_year_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +29,8 @@
         app:layout_constraintTop_toBottomOf="@+id/month_year_spinner">
 
         <TextView
+            android:textColor="@color/white"
+
             android:id="@+id/total_expenses_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,6 +40,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:textColor="@color/white"
+
             android:id="@+id/total_expenses_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,6 +65,8 @@
             app:layout_constraintHeight_percent="0.4" />
 
         <TextView
+            android:textColor="@color/white"
+
             android:id="@+id/categories_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,6 +110,7 @@
             android:contentDescription="@string/empty_state" />
 
         <TextView
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -110,6 +119,8 @@
             android:textStyle="bold" />
 
         <TextView
+            android:textColor="@color/white"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
